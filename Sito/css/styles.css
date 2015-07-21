@@ -18,9 +18,10 @@ section#login {
 }
 
 #formLogin {
-	background-color: #F5CC62;
+	background-color: #FEFB95;
 	margin-left: 40%;
 	margin-right: 40%;
+	padding: 10 10 10 10;
 	box-shadow: 10px 10px 5px #888888;
 }
 
