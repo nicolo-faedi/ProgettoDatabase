@@ -17,6 +17,13 @@ section#login {
 	text-align: center;
 }
 
+section#profile {
+	margin-top: 30px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+
 #formLogin {
 	background-color: #FEFB95;
 	margin-left: 40%;
@@ -25,11 +32,19 @@ section#login {
 	box-shadow: 10px 10px 5px #888888;
 }
 
+#profile-box {
+}
+
 h1 {
 	font-size:50px;
 	letter-spacing:-2px;	
 	line-height:40px; 
 	text-align:center;  
+}
+
+h2 {
+	font-size:30px;	
+	line-height:40px; 
 }
 
 h3 {
