@@ -1,7 +1,4 @@
-<!--
-Theme by: WebThemez.com 
-Note: Please use our back link in your site (webthemez.com)
--->
+
 <!DOCTYPE HTML>
 <!--[if lt IE 7 ]> <html lang="en" class="ie ie6"> <![endif]--> 
 <!--[if IE 7 ]>	<html lang="en" class="ie ie7"> <![endif]--> 
@@ -9,8 +6,12 @@ Note: Please use our back link in your site (webthemez.com)
 <!--[if IE 9 ]>	<html lang="en" class="ie ie9"> <![endif]--> 
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
+<?php
+session_start();// come sempre prima cosa, aprire la sessione 
+include("db_con.php"); // includere la connessione al database
+?>
   <meta charset="utf-8">
-  <title>Progello - LogIn</title>
+  <title>POST IT | Login</title>
   <meta name="description" content="">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold"> 
@@ -21,44 +22,44 @@ Note: Please use our back link in your site (webthemez.com)
 <body>
 
     <section id="login" class="container-fluid">
+        <!--Nome Sito-->
         <h1>Post It !</h1><br><br>
         <!--Login-->
-        <form id="formLogin" method="post" action="login.php">
+        <form id="formLogin" method="post" action="php/login.php">
             <br>La tua email<br><input type="text" name="username">
-            <br>Password<br><input type="password" name="psw"><br><br>
-            <button type="button" class="btn btn-primary">Accedi</button>
+            <br>Password<br><input type="password" name="password"><br><br>
+            <button type="submit" name="login" class="btn btn-primary">Accedi</button>
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalRegistrazione">Registrati</button><br><br>
         </form>
-
         <!--Registrazione-->
         <div id="modalRegistrazione" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button><br><br>
-                        <h2>Registra un nuovo account</h2>
-                        <form id="formRegistrazione" action="" class="container-fluid">
-                            <br>Nome<br><input type="name" name="name">
-                            <br>Cognome<br><input type="surname" name="username">
+	                <form id="formRegistrazione" action="php/registration.php" class="container-fluid">
+	                    <div class="modal-body">
+	                        <button type="button" class="close" data-dismiss="modal">&times;</button><br><br>
+	                        <h2>Registra un nuovo account</h2>
+                            <br>Nome<br><input type="name" name="nome">
+                            <br>Cognome<br><input type="surname" name="cognome">
                             <br>La tua email<br><input type="email" name="email">
-                            <br>Password<br><input type="password" name="psw"><br><br>
+                            <br>Password<br><input type="password" name="password"><br><br>
 
                             <div class="btn-group">
-                              <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              	<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Tipo utente <span class="caret"></span>
-                              </button>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Studente</a></li>
-                                <li><a href="#">Docente</a></li>
-                              </ul>
+                              	</button>
+                              	<ul class="dropdown-menu">
+	                                <li><a href="#" name="tipo">Studente</a></li>
+	                                <li><a href="#" name="tipo">Docente</a></li>
+                              	</ul>
                             </div>
                             <br><br>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
-                        <button type="button" class="btn btn-primary">Registrati</button>
-                    </div>
+	                    </div>
+	                    <div class="modal-footer">
+	                        <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+	                        <button type="submit" class="btn btn-primary">Registrati</button>
+	                    </div>
+	                </form>
                 </div>
             </div>
         </div>
@@ -71,6 +72,5 @@ Note: Please use our back link in your site (webthemez.com)
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Latest compiled JavaScript -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
 </body>
 </html>
